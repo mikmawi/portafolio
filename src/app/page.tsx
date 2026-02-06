@@ -1,5 +1,8 @@
 import Work from '@/components/Work';
 import About from '@/components/About';
+import Projects from '@/components/Projects';
+import TechStack from '@/components/TechStack';
+
 import { Facebook, Instagram, Twitter } from 'lucide-react'; // Necesitarás instalar lucide-react
 import {Cpu, Globe, Zap, Code2} from 'lucide-react';
 
@@ -26,6 +29,7 @@ export default function Home() {
             src="/retrato1color.jpeg"
             /*src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000" // Puedes usar tu propia foto aquí*/
             alt="Profile"
+            className="w-full h-full object-cover"
             /*className="w-full h-full object-cover grayscale brightness-75"*/
           />
         </div>
@@ -35,7 +39,7 @@ export default function Home() {
           <div className="max-w-md">
             {/* Etiqueta superior opcional para más estilo tech */}
             <span className="text-[10px] tracking-[0.4em] text-gray-500 uppercase mb-4 block">
-                 Developer & Arquitecto de 
+                 Especialista IA & Developer
             </span>
             <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tighter">
               Hola, soy <br />
@@ -68,9 +72,12 @@ export default function Home() {
 {/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
       <About />
 
+{/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
+      <Projects />
 
 
-
+{/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
+      <TechStack />
     
 {/* NUEVA SECCIÓN: EXPERTISE (Basada en tus imágenes) */}
       <section id="expertise" className="py-32 px-8 md:px-24 bg-[#0a0a0a] border-t border-gray-900">
