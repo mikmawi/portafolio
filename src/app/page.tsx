@@ -1,6 +1,7 @@
 import Work from '@/components/Work';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
+import ProjectsV1 from '@/components/ProjectsV1';
 import TechStack from '@/components/TechStack';
 
 import { Facebook, Instagram, Twitter } from 'lucide-react'; // Necesitarás instalar lucide-react
@@ -78,6 +79,9 @@ export default function Home() {
 
 {/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
       <TechStack />
+
+{/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
+      <ProjectsV1 />
     
 {/* NUEVA SECCIÓN: EXPERTISE (Basada en tus imágenes) */}
       <section id="expertise" className="py-32 px-8 md:px-24 bg-[#0a0a0a] border-t border-gray-900">
