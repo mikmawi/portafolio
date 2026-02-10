@@ -1,40 +1,91 @@
+'use client';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa'; // Asegúrate de tener react-icons instalado
+
 export default function About() {
   return (
-    <section className="bg-white text-black py-32 px-8 md:px-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+    <section className="bg-white py-24 px-6 md:px-20 min-h-screen flex items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
-        {/* Lado Izquierdo: El saludo gigante */}
-        <div className="flex items-center h-full">
-          <h2 className="text-[120px] md:text-[200px] font-black tracking-tighter leading-none">
-            ¡Hola!
-          </h2>
-        </div>
+        {/* Lado Izquierdo: Imagen con bordes redondeados */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative group"
+        >
+          <div className="overflow-hidden rounded-[60px] md:rounded-[80px] aspect-[4/5] lg:aspect-auto lg:h-[700px]">
+            <img 
+              src="/retrato2bn.jpeg" // Cambia por tu imagen (retrato1color.jpeg)
+              alt="Jorge Rivas" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+        </motion.div>
 
-        {/* Lado Derecho: Los párrafos informativos */}
-        <div className="space-y-12 max-w-xl text-sm md:text-base leading-relaxed">
-          {/* Versión en Español */}
-          <div className="space-y-4">
-            <p>
-              Desarrollo <span className="font-bold">productos digitales escalables y confiables</span> utilizando Cloud Computing, Python, Nest.js, NextJS, Flutter e Inteligencia Artificial y Visión por Computadora.
-            </p>
-            <p>
-              Acompaño a empresas y emprendedores en la creación de soluciones tecnológicas bien diseñadas, enfocadas en eficiencia, crecimiento y resultados reales.
-            </p>
+        {/* Lado Derecho: Contenido */}
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex flex-col"
+        >
+          {/* Tag de sección */}
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-gray-900 font-medium text-sm tracking-tight">About</span>
+            <div className="h-[1px] w-12 bg-gray-900"></div>
           </div>
 
-          {/* Separador sutil (opcional, imitando el de la imagen) */}
-          <div className="w-12 h-[1px] bg-gray-300 mx-auto md:mx-0"></div>
+{/* Título Principal */}
+<h2 className="text-black text-5xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-12">
+  Cambia el código <br />
+  <span className="text-gray-400">permanece la esencia</span>
+</h2>
 
-          {/* Versión en Inglés */}
-          <div className="space-y-4 text-gray-600">
-            <p>
-              I develop <span className="font-bold">scalable and reliable digital products</span> using Cloud Computing, Python, Nest.js, NextJS, Flutter and Artificial Intelligence and Computer Vision.
-            </p>
-            <p>
-              I accompany companies and entrepreneurs in the creation of well-designed technological solutions, focused on efficiency, growth and real results.
-            </p>
+{/* Biografía */}
+<div className="space-y-6 text-gray-500 max-w-xl">
+  <p className="text-[16px] font-light leading-[1.8] tracking-tight text-justify md:text-left">
+    Soy <span className="text-black font-medium">Mauricio</span>. Hace un tiempo tomé la decisión que redifinió mi camino. Dejé atrás a las personas que amaba 
+    para buscar un propósito real. Mi viaje me llevó desde las calles de <span className="text-black">New York</span> hasta <span className="text-black">Guayaquil </span> 
+    y ahora <span className="text-black">Quito</span>, con una meta clara: construir una vida y una marca que me otorguen la independencia necesaria para volver con los míos.
+  </p>
+
+  <p className="text-[16px] font-light leading-[1.8] tracking-tight text-justify md:text-left border-l-2 border-black pl-4">
+    Antes de este viaje, tenía impulso pero me faltaba dirección. Encontré en el desarrollo no solo una carrera, sino un lenguaje para entender el mundo.
+    Entiendo que en el software, como en la vida, la prueba no es evitar el error, sino analizarlo y entenderlo para encontrar la salida; 
+    es el arte de <span className="text-black">reconstruirse sobre la falla</span> sin abandonar el propósito original.
+  </p>
+  
+  <p className="text-[16px] font-light leading-[1.8] tracking-tight text-justify md:text-left">
+    Hoy mi enfoque como <span className="text-black font-semibold uppercase text-[10px] tracking-widest bg-gray-100 px-2 py-1">Arquitecto Digital</span> combina la precisión técnica con una visión humana. Creo firmemente que la tecnología debe ser una herramienta de empoderamiento que elimine barreras y cree libertad, tanto para quien la usa como para quien la crea.
+  </p>
+
+  <p className="font-semibold text-black italic text-[15px] mt-8">
+    "En el código y en la vida, el error no es un fracaso, es una fuente de datos."
+  </p>
+</div>
+
+          {/* Redes Sociales */}
+          <div className="flex items-center gap-6 mt-12">
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              className="text-2xl text-black hover:text-purple-600 transition-colors"
+            >
+              <FaInstagram />
+            </a>
+            <a 
+              href="https://linkedin.com" 
+              target="_blank" 
+              className="text-2xl text-black hover:text-blue-600 transition-colors"
+            >
+              <FaLinkedin />
+            </a>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

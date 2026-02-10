@@ -3,14 +3,14 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
-  { title: "EcoBin AI", type: "Computer Vision", period: "2024", color: "bg-[#4ade80]", text: "text-black", desc: "Clasificación automática de residuos sólidos.", image: "/retrato1color.jpeg" },
-  { title: "SoluvIA", type: "AgroTech / AI", period: "2023", color: "bg-[#00d4ff]", text: "text-black", desc: "Control de biomasa en acuicultura.", image: "/retrato1color.jpeg" },
-  { title: "OncoVision", type: "HealthTech", period: "2024", color: "bg-[#f87171]", text: "text-white", desc: "Detección de anomalías en imágenes médicas.", image: "/retrato1color.jpeg" },
-  { title: "Chesco App", type: "Mobile Dev", period: "2023", color: "bg-[#fbbf24]", text: "text-black", desc: "Gestión integral de pedidos y delivery.", image: "/retrato1color.jpeg" },
-  { title: "Mobility", type: "Uber Clone", period: "2022", color: "bg-[#8b5cf6]", text: "text-white", desc: "Plataforma de transporte en tiempo real.", image: "/retrato1color.jpeg" },
-   { title: "BusPass", type: "Ticket System", period: "2023", color: "bg-[#ec4899]", text: "text-white", desc: "Sistema de reserva de transporte público.",image: "/retrato1color.jpeg" },
-  { title: "NeuroStock", type: "Fintech AI", period: "2024", color: "bg-[#2dd4bf]", text: "text-black", desc: "Predicción de mercados con redes neuronales.",image: "/retrato1color.jpeg" },
-  { title: "Sentinel IoT", type: "Smart City", period: "2024", color: "bg-[#ffffff]", text: "text-black", desc: "Vigilancia autónoma perimetral.",image: "/retrato1color.jpeg"}
+  { title: "EcoBin AI", type: "Visión por computadora", period: "2024", color: "bg-[#4ade80]", text: "text-black", desc: "Clasificación de residuos.", image: "/retrato1color.jpeg" },
+  { title: "SoluvIA", type: "Acuiculutra 4.0 / IA", period: "2023", color: "bg-[#00d4ff]", text: "text-black", desc: "Control de biomasa en acuicultura.", image: "/retrato1color.jpeg" },
+  { title: "OncoVision", type: "Salud / IA", period: "2024", color: "bg-[#f87171]", text: "text-white", desc: "Detección de enfermedades.", image: "/retrato1color.jpeg" },
+  { title: "Chesco App", type: "Desarrollo móvil", period: "2023", color: "bg-[#fbbf24]", text: "text-black", desc: "App de delivery.", image: "/retrato1color.jpeg" },
+  { title: "Mobility", type: "Desarrollo móvil", period: "2022", color: "bg-[#8b5cf6]", text: "text-white", desc: "App UBER.", image: "/retrato1color.jpeg" },
+   { title: "BusPass", type: "Compra tickets bus", period: "2023", color: "bg-[#ec4899]", text: "text-white", desc: "App compra de tickets.",image: "/retrato1color.jpeg" },
+  { title: "NeuroStock", type: "Fintech AI", period: "2024", color: "bg-[#2dd4bf]", text: "text-black", desc: "Predicción de mercados.",image: "/retrato1color.jpeg" },
+  { title: "Sentinel IoT", type: "Smart City", period: "2024", color: "bg-[#ffffff]", text: "text-black", desc: "Vigilancia autónoma.",image: "/retrato1color.jpeg"}
 ];
 
 export default function Projects() {
@@ -23,7 +23,7 @@ export default function Projects() {
 
   // Timer para el movimiento automático
   useEffect(() => {
-    const interval = setInterval(nextSlide, 2000); // Cambia cada 5 segundos
+    const interval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
     return () => clearInterval(interval);
   }, [nextSlide]);
 
@@ -31,8 +31,8 @@ export default function Projects() {
     <section className="bg-black py-20 overflow-hidden flex flex-col items-center">
       <div className="max-w-7xl w-full mb-16 px-4 md:px-20">
         <h2 className="text-white text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none">
-          Del boceto <br />
-          <span className="text-gray-500 font-light">al código</span>
+          Del boceto &nbsp;
+          <span className="text-gray-500 font-light text-5xl md:text-7xl">al código</span>
         </h2>
       </div>
 

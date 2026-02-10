@@ -3,9 +3,11 @@ import About from '@/components/About';
 import Projects from '@/components/Projects';
 import ProjectsV1 from '@/components/ProjectsV1';
 import TechStack from '@/components/TechStack';
+import Footer from '@/components/Footer';
 
 import { Facebook, Instagram, Twitter } from 'lucide-react'; // Necesitarás instalar lucide-react
 import {Cpu, Globe, Zap, Code2} from 'lucide-react';
+
 
 export default function Home() {
   return (
@@ -76,17 +78,14 @@ export default function Home() {
 {/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
       <Projects />
 
-
 {/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
       <TechStack />
 
-{/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
-      <ProjectsV1 />
     
-{/* NUEVA SECCIÓN: EXPERTISE (Basada en tus imágenes) */}
+{/* NUEVA SECCIÓN: EXPERTISE (Basada en tus imágenes) 
       <section id="expertise" className="py-32 px-8 md:px-24 bg-[#0a0a0a] border-t border-gray-900">
         <div className="max-w-7xl mx-auto">
-          {/* Encabezado con la fuerza del "¡Hola!" de tu imagen */}
+          {/* Encabezado con la fuerza del "¡Hola!" de tu imagen 
           <div className="mb-20">
             <h2 className="text-[12vw] md:text-[8vw] font-black leading-none uppercase tracking-tighter opacity-10 absolute -mt-10 md:-mt-20">
               Expertise
@@ -97,7 +96,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-            {/* Bloque de Texto Principal (Copiado de tu imagen 2) */}
+            {/* Bloque de Texto Principal (Copiado de tu imagen 2) 
             <div className="space-y-8">
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light">
                 Desarrollo <span className="text-white font-bold">productos digitales escalables y confiables</span> utilizando Cloud Computing, Python, Nest.js, Next.js, Flutter e Inteligencia Artificial.
@@ -108,7 +107,7 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Grid de Tecnologías/Servicios */}
+            {/* Grid de Tecnologías/Servicios 
             <div className="grid grid-cols-2 gap-4 md:gap-8">
               <div className="p-8 border border-gray-800 hover:border-white transition-colors duration-500 group">
                 <Code2 className="mb-4 text-gray-500 group-hover:text-white" size={32} />
@@ -129,13 +128,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
 
-      {/* Sección de Trabajos (el componente que ya teníamos) */}
+      {/* Sección de Trabajos (el componente que ya teníamos) 
       <div id="work" className="bg-black">
         <Work />
-      </div>
+      </div>*/}
+
+
+      {/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
+      <Footer />
     </main>
   );
 }
