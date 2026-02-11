@@ -48,19 +48,17 @@ export default function About() {
 {/* Biografía */}
 <div className="space-y-6 text-gray-500 max-w-xl">
   <p className="text-[16px] font-light leading-[1.8] tracking-tight text-justify md:text-left">
-    Soy <span className="text-black font-medium">Mauricio</span>. Hace un tiempo tomé la decisión que redifinió mi camino. Dejé atrás a las personas que amaba 
-    para buscar un propósito real. Mi viaje me llevó desde las calles de <span className="text-black">New York</span> hasta <span className="text-black">Guayaquil </span> 
+    Hace poco, mi camino comenzó con una decisión difícil: alejarme de lo que amaba para buscar mi propósito. Mi viaje me llevó desde mi natal <span className="text-black">Machala</span>, pasando por las calles de <span className="text-black">New York</span>, <span className="text-black">Guayaquil </span> 
     y ahora <span className="text-black">Quito</span>, con una meta clara: construir una vida y una marca que me otorguen la independencia necesaria para volver con los míos.
   </p>
 
   <p className="text-[16px] font-light leading-[1.8] tracking-tight text-justify md:text-left border-l-2 border-black pl-4">
-    Antes de este viaje, tenía impulso pero me faltaba dirección. Encontré en el desarrollo no solo una carrera, sino un lenguaje para entender el mundo.
-    Entiendo que en el software, como en la vida, la prueba no es evitar el error, sino analizarlo y entenderlo para encontrar la salida; 
-    es el arte de <span className="text-black">reconstruirse sobre la falla</span> sin abandonar el propósito original.
+    Antes de este viaje, tenía impulso pero me faltaba dirección. En el desarrollo encontré un lenguaje para entender el mundo.
+    En el software, como en la vida, la clave no es evitar el error, sino el arte de <span className="text-black">reconstruirse sobre la falla</span> sin abandonar el propósito original.
   </p>
   
   <p className="text-[16px] font-light leading-[1.8] tracking-tight text-justify md:text-left">
-    Hoy mi enfoque como <span className="text-black font-semibold uppercase text-[10px] tracking-widest bg-gray-100 px-2 py-1">Arquitecto Digital</span> combina la precisión técnica con una visión humana. Creo firmemente que la tecnología debe ser una herramienta de empoderamiento que elimine barreras y cree libertad, tanto para quien la usa como para quien la crea.
+    Hoy mi enfoque como <span className="text-black font-semibold uppercase text-[10px] tracking-widest bg-gray-100 px-2 py-1">developer</span> combina la precisión técnica con una visión humana, creando tecnología que no solo elimine barreras, si no que genere libertad, tanto para quien la usa como para quien la crea.
   </p>
 
   <p className="font-semibold text-black italic text-[15px] mt-8">

@@ -1,15 +1,35 @@
+'use client'; // <--- ESTA LÍNEA ES LA CLAVE
 import Work from '@/components/Work';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
 import ProjectsV1 from '@/components/ProjectsV1';
 import TechStack from '@/components/TechStack';
 import Footer from '@/components/Footer';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import { Facebook, Instagram, Twitter } from 'lucide-react'; // Necesitarás instalar lucide-react
+import { Facebook, Github, Instagram, Twitter } from 'lucide-react'; // Necesitarás instalar lucide-react
 import {Cpu, Globe, Zap, Code2} from 'lucide-react';
 
-
 export default function Home() {
+
+// La función para el scroll suave
+  const scrollToWork = () => {
+    const element = document.getElementById('work');
+    if (element) {
+      // Calculamos un pequeño offset por si tienes un header fijo
+      const offset = 80; 
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <main className="min-h-screen bg-[#111111]">
       {/* Navbar Superior */}
@@ -17,10 +37,10 @@ export default function Home() {
         <div className="text-xl font-bold tracking-tighter">Portafolio</div>
         <div className="hidden md:flex space-x-8 text-xs uppercase tracking-widest text-gray-300">
           <a href="#" className="hover:text-white transition">Inicio</a>
-          <a href="#" className="hover:text-white transition">mikmawi</a>
+          <a href="#about" className="hover:text-white transition">mikmawi</a>
           <a href="#work" className="hover:text-white transition">Creaciones</a>
           <a href="#" className="hover:text-white transition">los 7 escritos</a>
-          <a href="#" className="hover:text-white transition">Contacto</a>
+          <a href="#footer" className="hover:text-white transition">Contacto</a>
         </div>
       </nav>
 
@@ -53,30 +73,56 @@ export default function Home() {
             </p>
 
             {/* Botones */}
-            <div className="mt-10 flex flex-wrap gap-4">
-              <button className="px-8 py-3 bg-white text-black font-semibold text-xs uppercase tracking-widest hover:bg-gray-200 transition">
-                Empezar proyecto
-              </button>
-              <button className="px-8 py-3 border border-white text-white font-semibold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition flex items-center gap-2">
-                Explorar más <span>▶</span>
-              </button>
-            </div>
+            <div className="mt-10 flex flex-row items-center gap-4 w-full">
+                    <button className="whitespace-nowrap px-6 md:px-8 py-3 bg-white text-black font-semibold text-[10px] md:text-xs uppercase tracking-widest hover:bg-gray-200 transition">
+                        Empezar proyecto
+                      </button>
+                      <motion.button
+                        onClick={scrollToWork}
+                        // Animación: Wit & Style
+                        whileHover={{ 
+                          scale: 1.05, 
+                          boxShadow: "0px 0px 20px rgba(255, 255, 255, 0.2)" 
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.8 }}
+                        className="whitespace-nowrap px-6 md:px-8 py-3 border border-white/30 text-white font-semibold text-[10px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] hover:border-white hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3 group"
+                        >
+                        Explorar más 
+                        <motion.span 
+                          animate={{ x: [0, 5, 0] }} 
+                          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                          className="text-[10px]"
+                        >
+                          ▶
+                        </motion.span>
+                      </motion.button>
+                    
+                </div>
 
             {/* Redes Sociales */}
             <div className="mt-12 flex space-x-6 text-gray-400">
               <a href="#" className="hover:text-white transition"><Facebook size={18} /></a>
               <a href="#" className="hover:text-white transition"><Instagram size={18} /></a>
-              <a href="#" className="hover:text-white transition"><Twitter size={18} /></a>
+              <a href="#" className="hover:text-white transition"><Github size={18} /></a>
             </div>
           </div>
         </div>
       </section>
 
-{/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
+{/* Sección About*/}
+      <div id= "about">
       <About />
+      </div>
 
-{/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
+{/* Sección de Trabajos (el componente que ya teníamos) */}
+      <div id= "work">
       <Projects />
+      </div>
+
+
 
 {/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
       <TechStack />
@@ -138,7 +184,10 @@ export default function Home() {
 
 
       {/* NUEVA SECCIÓN: El bloque blanco de "¡Hola!" */}
+      <div id="footer">
       <Footer />
+      </div>
+      
     </main>
   );
 }
