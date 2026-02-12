@@ -1,39 +1,40 @@
 'use client';
 import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, } from 'framer-motion';
 
 const projects = [
-  { title: "EcoBin AI",
+  {
+    title: "EcoBin AI",
     type: "Visión por computadora",
-    period: "2024", color: "bg-[#4ade80]",
+    period: "2024",
+    color: "bg-[#4ade80]",
     text: "text-black",
-    desc: "Clasificación de residuos en tiempo real.",
-    tech: ["Python", "Ultralytics", "OpenCV", "Flask"],
+    desc: "Clasificación inteligente de residuos mediante visión artificial en tiempo real.",
+    tech: ["Python", "TensorFlow", "OpenCV", "FastAPI", "Docker"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
   },
-
-  { title: "SoluvIA",
-    type: "Acuiculutra 4.0 / IA",
+  {
+    title: "SoluvIA",
+    type: "Acuicultura 4.0 / IA",
     period: "2023",
     color: "bg-[#00d4ff]",
     text: "text-black",
-    desc: "Sensores IoT para monitoreo y predicción.",
-    tech: ["ESP32", "MQTT", "NestJS", "MongoDB", "Python"],
+    desc: "Plataforma IoT para monitoreo y predicción de biomasa en acuicultura.",
+    tech: ["ESP32", "MQTT", "NestJS", "TimescaleDB", "Python"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
   },
-
- {
+  {
     title: "OncoVision",
     type: "Salud / IA",
     period: "2024",
     color: "bg-[#f87171]",
     text: "text-white",
-    desc: "Detección médica asistido por IA.",
-    tech: ["Python", "TensorFlow", "FastAPI", "PostgreSQL"],
+    desc: "Sistema de detección médica asistido por inteligencia artificial.",
+    tech: ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Docker"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -44,7 +45,7 @@ const projects = [
     period: "2023",
     color: "bg-[#fbbf24]",
     text: "text-black",
-    desc: "App de delivery con gestión en tiempo real.",
+    desc: "Aplicación de delivery con arquitectura backend escalable y gestión en tiempo real.",
     tech: ["Flutter", "NestJS", "PostgreSQL", "Firebase"],
     demoUrl: "#",
     brochureUrl: "#",
@@ -56,7 +57,7 @@ const projects = [
     period: "2022",
     color: "bg-[#8b5cf6]",
     text: "text-white",
-    desc: "App de movilidad con geolocalización.",
+    desc: "Plataforma de movilidad urbana con matching y geolocalización en tiempo real.",
     tech: ["Flutter", "Node.js", "Socket.io", "PostgreSQL"],
     demoUrl: "#",
     brochureUrl: "#",
@@ -68,8 +69,8 @@ const projects = [
     period: "2023",
     color: "bg-[#ec4899]",
     text: "text-white",
-    desc: "Plataforma para compra de boletos de transporte.",
-    tech: ["Flutter", "NestJS", "PostgreSQL"],
+    desc: "Plataforma digital para compra y validación de boletos de transporte.",
+    tech: ["Flutter", "NestJS", "PostgreSQL", "Stripe API"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -80,8 +81,8 @@ const projects = [
     period: "2024",
     color: "bg-[#2dd4bf]",
     text: "text-black",
-    desc: "Predicción de mercados financieros.",
-    tech: ["Python", "TensorFlow", "Pandas", "FastAPI"],
+    desc: "Motor predictivo para análisis y proyección de mercados financieros.",
+    tech: ["Python", "TensorFlow", "Pandas", "FastAPI", "Docker"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -92,8 +93,8 @@ const projects = [
     period: "2024",
     color: "bg-[#ffffff]",
     text: "text-black",
-    desc: "Sistema autónomo de monitoreo inteligente.",
-    tech: ["ESP32", "MQTT", "Node.js", "Redis"],
+    desc: "Sistema autónomo de monitoreo y vigilancia inteligente.",
+    tech: ["ESP32", "MQTT", "Node.js", "Redis", "Docker"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -103,14 +104,12 @@ const projects = [
 export default function Projects() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Función para avanzar al siguiente slide
   const nextSlide = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % projects.length);
   }, []);
 
-  // Timer para el movimiento automático
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+    const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, [nextSlide]);
 
@@ -118,39 +117,33 @@ export default function Projects() {
     <section className="bg-black py-20 overflow-hidden flex flex-col items-center">
       <div className="max-w-7xl w-full mb-16 px-4 md:px-20">
         <h2 className="text-white text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none">
-          Del boceto &nbsp;
+          Del boceto&nbsp;
           <span className="text-gray-500 font-light text-5xl md:text-7xl">al código</span>
         </h2>
       </div>
 
-      {/* Contenedor del Slider */}
       <div className="relative w-full flex flex-col items-center">
-        <div className="flex items-center justify-center w-full h-[650px]">
+        <div className="flex items-center justify-center w-full min-h-[700px]">
           {projects.map((project, index) => {
-            // Lógica para determinar la posición y escala
             const isCenter = index === activeIndex;
-            const isPrev = index === (activeIndex - 1 + projects.length) % projects.length;
-            const isNext = index === (activeIndex + 1) % projects.length;
 
             return (
               <motion.div
                 key={index}
-                initial={false}
                 animate={{
                   scale: isCenter ? 1 : 0.8,
-                  x: (index - activeIndex) * 480, // Ajusta el espaciado horizontal
+                  x: (index - activeIndex) * 480,
                   opacity: isCenter ? 1 : 0.4,
                   zIndex: isCenter ? 20 : 10,
                 }}
                 transition={{ type: "spring", stiffness: 260, damping: 25 }}
-                className={`absolute min-w-[350px] md:min-w-[450px] h-[600px] ${project.color} rounded-[40px] p-8 flex flex-col shadow-2xl overflow-hidden`}
+                className={`absolute min-w-[350px] md:min-w-[450px] min-h-[650px] ${project.color} rounded-[40px] p-8 flex flex-col shadow-2xl`}
               >
-                {/* Espacio para Imagen */}
-                <div className="w-full h-64 bg-black/10 rounded-[30px] overflow-hidden mb-8 border border-black/5">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover mix-blend-multiply hover:mix-blend-normal transition-all duration-500"
+                <div className="w-full h-64 bg-black/10 rounded-[30px] overflow-hidden mb-8">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
                   />
                 </div>
 
@@ -163,14 +156,14 @@ export default function Projects() {
                       {project.period}
                     </span>
                   </div>
-                  <h3 className={`text-4xl md:text-5xl font-black mb-4 leading-none tracking-tighter ${project.text}`}>
+
+                  <h3 className={`text-4xl font-black mb-4 ${project.text}`}>
                     {project.title}
                   </h3>
-                  <p className={`text-lg font-medium leading-tight mt-2 ${project.text} opacity-90`}>
+
+                  <p className={`text-lg ${project.text} opacity-90`}>
                     {project.desc}
                   </p>
-
-
 
                   <div className="flex flex-wrap gap-2 mt-6">
                     {project.tech.map((tech, i) => (
@@ -204,21 +197,6 @@ export default function Projects() {
               </motion.div>
             );
           })}
-        </div>
-
-        {/* INDICADOR DE PAGINACIÓN (Basado en tu imagen) */}
-        <div className="flex items-center gap-3 mt-12">
-          {projects.map((_, i) => (
-            <motion.div
-              key={i}
-              onClick={() => setActiveIndex(i)}
-              animate={{
-                width: i === activeIndex ? 40 : 10,
-                backgroundColor: i === activeIndex ? "#8b5cf6" : "#333", // Color morado de tu imagen
-              }}
-              className="h-[10px] rounded-full cursor-pointer transition-colors duration-300"
-            />
-          ))}
         </div>
       </div>
     </section>

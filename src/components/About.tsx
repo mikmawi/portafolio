@@ -41,7 +41,7 @@ export default function About() {
 
 {/* Título Principal */}
 <h2 className="text-black text-5xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-12">
-  Cambia el código <br />
+  Cambia el código, <br />
   <span className="text-gray-400">permanece la esencia</span>
 </h2>
 
@@ -53,12 +53,12 @@ export default function About() {
   </p>
 
   <p className="text-[16px] font-light leading-[1.8] tracking-tight text-justify md:text-left border-l-2 border-black pl-4">
-    Antes de este viaje, tenía impulso pero me faltaba dirección. En el desarrollo encontré un lenguaje para entender el mundo.
-    En el software, como en la vida, la clave no es evitar el error, sino el arte de <span className="text-black">reconstruirse sobre la falla</span> sin abandonar el propósito original.
+    En el desarrollo encontré algo más que una profesión: encontré un lenguaje para comprender el mundo.
+    Porque tanto en la vida como en el software, la evolución no ocurre evitando fallas, sino <span className="text-black">reconstruyendo sobre ellas</span> sin abandonar el propósito original.
   </p>
   
   <p className="text-[16px] font-light leading-[1.8] tracking-tight text-justify md:text-left">
-    Hoy mi enfoque como <span className="text-black font-semibold uppercase text-[10px] tracking-widest bg-gray-100 px-2 py-1">developer</span> combina la precisión técnica con una visión humana, creando tecnología que no solo elimine barreras, si no que genere libertad, tanto para quien la usa como para quien la crea.
+    Hoy mi enfoque como <span className="text-black font-semibold uppercase text-[10px] tracking-widest bg-gray-100 px-2 py-1">AI Engineer</span> combina la precisión técnica con una visión humana, creando tecnología que no solo elimine barreras, si no que genere libertad, tanto para quien la usa como para quien la crea.
   </p>
 
   <p className="font-semibold text-black italic text-[15px] mt-8">

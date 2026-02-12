@@ -59,8 +59,8 @@ export default function Home() {
 
         {/* Lado Derecho: Contenido */}
         <div className="w-full md:w-1/2 flex flex-col justify-center px-12 md:px-24 bg-[#111111] py-12">
-          <div className="max-w-md">
-            {/* Etiqueta superior opcional para más estilo tech */}
+          {/*<div className="max-w-md">
+            {/* Etiqueta superior opcional para más estilo tech *
             <span className="text-[10px] tracking-[0.4em] text-gray-500 uppercase mb-4 block">
                  Especialista IA & Developer
             </span>
@@ -70,7 +70,35 @@ export default function Home() {
             </h1>
             <p className="mt-6 text-gray-400 text-sm leading-relaxed max-w-sm">
               Acompaño a empresas y emprendedores en la creación de soluciones tecnológicas enfocadas en eficiencia, crecimiento y resultados reales.
-            </p>
+            </p>*/}
+
+          <div className="max-w-4xl z-10 "> {/* pointer-events-none para que el texto no interfiera con el mouse */}
+            
+            {/* Ceja / Label */}
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-gray-300 font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] mb-4 block ml-1"
+            >
+              AI Engineer & System Architect
+            </motion.span>
+
+                      {/* Título Principal */}
+                      <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] mb-8">
+                        Hola, soy <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500 ">
+                          mikmawi
+                        </span>
+                      </h1>
+
+                      {/* Descripción Refinada */}
+                      <p className="text-gray-300 text-base md:text-lg font-light leading-relaxed max-w-2xl">
+                        Construyo sistemas de<span className="text-white font-medium"> inteligencia artificial</span> y <span className="text-white font-medium"> arquitecturas backend de alto rendimiento</span>, con enfoque en Machine Learning, Big Data, Data Engineering y automatización inteligente.
+                        <span className="block mt-8 text-white font-semibold tracking-tight">
+  La innovación real no es el código. Es lo que resuelves con él.
+</span>
+                      </p>
 
             {/* Botones */}
             <div className="mt-10 flex flex-row items-center gap-4 w-full">
