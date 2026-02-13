@@ -20,7 +20,7 @@ const projects = [
     color: "bg-[#00d4ff]",
     text: "text-black",
     desc: "Sensores IoT para monitoreo y predicción.",
-    tech: ["ESP32", "MQTT", "NestJS", "MongoDB", "Python"],
+    tech: ["ESP32", "MQTT", "NestJS", "Python"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -33,7 +33,7 @@ const projects = [
     color: "bg-[#f87171]",
     text: "text-white",
     desc: "Detección médica asistido por IA.",
-    tech: ["Python", "TensorFlow", "FastAPI", "PostgreSQL"],
+    tech: ["Python", "TensorFlow", "FastAPI"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -45,7 +45,7 @@ const projects = [
     color: "bg-[#fbbf24]",
     text: "text-black",
     desc: "App de delivery con gestión en tiempo real.",
-    tech: ["Flutter", "NestJS", "PostgreSQL", "Firebase"],
+    tech: ["Flutter", "NestJS", "Firebase"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -57,7 +57,7 @@ const projects = [
     color: "bg-[#8b5cf6]",
     text: "text-white",
     desc: "App de movilidad con geolocalización.",
-    tech: ["Flutter", "Node.js", "Socket.io", "PostgreSQL"],
+    tech: ["Flutter", "Node.js", "Socket.io"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -68,7 +68,7 @@ const projects = [
     period: "2023",
     color: "bg-[#ec4899]",
     text: "text-white",
-    desc: "Plataforma para compra de boletos de transporte.",
+    desc: "App para compra de boletos de bus.",
     tech: ["Flutter", "NestJS", "PostgreSQL"],
     demoUrl: "#",
     brochureUrl: "#",
@@ -166,7 +166,7 @@ export default function Projects() {
                   <h3 className={`text-4xl md:text-5xl font-black mb-4 leading-none tracking-tighter ${project.text}`}>
                     {project.title}
                   </h3>
-                  <p className={`text-lg font-medium leading-tight mt-2 ${project.text} opacity-90`}>
+                  <p className={`text-sm md:text-base leading-relaxed line-clamp-2 ${project.text} opacity-80`}>
                     {project.desc}
                   </p>
 

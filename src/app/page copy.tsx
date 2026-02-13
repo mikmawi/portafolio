@@ -45,20 +45,20 @@ export default function Home() {
       </nav>
 
       {/* Hero Section Split Layout */}
-      <section className="flex flex-col md:flex-row min-h-screen">
+      <section className="relative flex flex-col md:flex-row h-screen">
         {/* Lado Izquierdo: Imagen */}
-        <div className="w-full md:w-1/2 h-[42vh] md:h-screen relative overflow-hidden">
+        <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden">
           <img 
             src="/retrato1color.jpeg"
             /*src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000" // Puedes usar tu propia foto aquí*/
             alt="Profile"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover"
             /*className="w-full h-full object-cover grayscale brightness-75"*/
           />
         </div>
 
         {/* Lado Derecho: Contenido */}
-        <div className="w-full md:w-1/2 bg-black text-white flex items-center">
+        <div className="w-full md:w-1/2 flex flex-col justify-center px-12 md:px-24 bg-[#111111] py-12">
           {/*<div className="max-w-md">
             {/* Etiqueta superior opcional para más estilo tech *
             <span className="text-[10px] tracking-[0.4em] text-gray-500 uppercase mb-4 block">
@@ -72,20 +72,20 @@ export default function Home() {
               Acompaño a empresas y emprendedores en la creación de soluciones tecnológicas enfocadas en eficiencia, crecimiento y resultados reales.
             </p>*/}
 
-          <div className="px-6 py-12 md:px-16 md:py-20 max-w-xl"> {/* pointer-events-none para que el texto no interfiera con el mouse */}
+          <div className="max-w-4xl z-10 "> {/* pointer-events-none para que el texto no interfiera con el mouse */}
             
             {/* Ceja / Label */}
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-gray-300 font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] mb-4 block ml-1"
+              className="text-gray-300 font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] mb-4 block ml-1"
             >
               AI Engineer & System Architect
             </motion.span>
 
                       {/* Título Principal */}
-                      <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                      <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] mb-8">
                         Hola, soy <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500 ">
                           mikmawi
@@ -93,7 +93,7 @@ export default function Home() {
                       </h1>
 
                       {/* Descripción Refinada */}
-                      <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-8">
+                      <p className="text-gray-300 text-base md:text-lg font-light leading-relaxed max-w-2xl">
                         Construyo sistemas de<span className="text-white font-medium"> inteligencia artificial</span> y <span className="text-white font-medium"> arquitecturas backend de alto rendimiento</span>, con enfoque en Machine Learning, Big Data, Data Engineering y automatización inteligente.
                         <span className="block mt-8 text-white font-semibold tracking-tight">
   La innovación real no es el código. Es lo que resuelves con él.
@@ -101,8 +101,8 @@ export default function Home() {
                       </p>
 
             {/* Botones */}
-            <div className="flex flex-col sm:flex-row gap-4">
-                    <button className="bg-white text-black px-6 py-3 text-sm tracking-wide font-medium">
+            <div className="mt-10 flex flex-row items-center gap-4 w-full">
+                    <button className="whitespace-nowrap px-6 md:px-8 py-3 bg-white text-black font-semibold text-[10px] md:text-xs uppercase tracking-widest hover:bg-gray-200 transition">
                         Empezar proyecto
                       </button>
                       <motion.button
