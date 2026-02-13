@@ -32,17 +32,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#111111]">
-      {/* Navbar Superior */}
-      <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-6 bg-transparent">
-        <div className="text-xl font-bold tracking-tighter">Portafolio</div>
-        <div className="hidden md:flex space-x-8 text-xs uppercase tracking-widest text-gray-300">
-          <a href="#" className="hover:text-white transition">Inicio</a>
-          <a href="#about" className="hover:text-white transition">mikmawi</a>
-          <a href="#work" className="hover:text-white transition">Creaciones</a>
-          <a href="#" className="hover:text-white transition">los 7 escritos</a>
-          <a href="#footer" className="hover:text-white transition">Contacto</a>
-        </div>
-      </nav>
 
       {/* Hero Section Split Layout */}
       <section className="flex flex-col md:flex-row min-h-screen">

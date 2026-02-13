@@ -1,6 +1,9 @@
 'use client';
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link'; // Asegúrate de importar esto al inicio del archivo
+import EcoBinDetail from '@/app/creaciones/ecobin/page';
+
 
 const projects = [
   { title: "EcoBin AI",
@@ -9,7 +12,7 @@ const projects = [
     text: "text-black",
     desc: "Clasificación de residuos en tiempo real.",
     tech: ["Python", "Ultralytics", "OpenCV", "Flask"],
-    demoUrl: "#",
+    demoUrl: "/creaciones/ecobin",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
   },
@@ -185,12 +188,12 @@ export default function Projects() {
 
                   {isCenter && (
                     <div className="flex gap-4 mt-8">
-                      <a
+                      <Link
                         href={project.demoUrl}
-                        className={`px-4 py-2 rounded-lg text-sm font-semibold ${project.text} bg-black/20 hover:bg-black/40 transition`}
+                        className={`px-4 py-2 rounded-lg text-sm font-semibold ${project.text} bg-black/20 hover:bg-black/40 transition inline-block`}
                       >
                         Ver proyecto
-                      </a>
+                      </Link>
 
                       <a
                         href={project.brochureUrl}
@@ -221,6 +224,7 @@ export default function Projects() {
           ))}
         </div>
       </div>
+
     </section>
   );
 }
