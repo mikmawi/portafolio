@@ -12,8 +12,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 const projects = [
-  { 
-    title: "EcoBin AI",
+  { title: "EcoBin AI",
     type: "Visión por computadora",
     period: "2024", color: "bg-[#4ade80]",
     text: "text-black",
@@ -23,8 +22,8 @@ const projects = [
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
   },
-  { 
-    title: "SoluvIA",
+
+  { title: "SoluvIA",
     type: "Acuiculutra 4.0 / IA",
     period: "2023",
     color: "bg-[#00d4ff]",
@@ -35,7 +34,8 @@ const projects = [
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
   },
-  {
+
+ {
     title: "OncoVision",
     type: "Salud / IA",
     period: "2024",
@@ -66,7 +66,7 @@ const projects = [
     color: "bg-[#8b5cf6]",
     text: "text-white",
     desc: "App de movilidad con geolocalización.",
-    tech: ["Flutter", "Node.js", "Socket.io", "PostgreSQL"],
+    tech: ["Flutter", "Node.js", "Socket.io"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -78,7 +78,7 @@ const projects = [
     color: "bg-[#ec4899]",
     text: "text-white",
     desc: "App para compra de boletos de bus.",
-    tech: ["Flutter", "NestJS", "PostgreSQL", "Socket.io"],
+    tech: ["Flutter", "NestJS", "PostgreSQL"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -111,8 +111,7 @@ const projects = [
 
 export default function Projects() {
   const [activeIndex, setActiveIndex] = useState(0);
-  // AGREGADO: Estado para la instancia de swiper
-  const [swiperInstance, setSwiperInstance] = useState<any>(null);
+  
 
   return (
     <section className="bg-black py-20 overflow-hidden flex flex-col items-center">
@@ -123,10 +122,12 @@ export default function Projects() {
         </h2>
       </div>
 
+
       <div className="relative w-full flex flex-col items-center">
+        {/* Swiper como contenedor principal de gestos */}
         <Swiper
           modules={[Autoplay, Pagination, EffectCreative]}
-          onSwiper={setSwiperInstance} // AGREGADO: Capturamos la instancia
+          
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           centeredSlides={true}
           slidesPerView={'auto'}
@@ -136,14 +137,15 @@ export default function Projects() {
             delay: 5000,
             disableOnInteraction: false,
           }}
-          className="w-full h-[650px] !overflow-visible"
+          className="w-full h-[650px] !overflow-visible" // !overflow-visible para ver las tarjetas laterales
         >
           {projects.map((project, index) => (
             <SwiperSlide 
               key={index} 
-              className="!flex items-center justify-center !w-auto"
+              className="!flex items-center justify-center !w-auto" // Permite que el ancho lo maneje tu div
             >
               {({ isActive }) => {
+                // Usamos el estado interno de Swiper para las animaciones
                 return (
                   <motion.div
                     initial={false}
@@ -154,6 +156,7 @@ export default function Projects() {
                     transition={{ type: "spring", stiffness: 260, damping: 25 }}
                     className={`min-w-[320px] md:min-w-[450px] h-[600px] ${project.color} rounded-[40px] p-8 flex flex-col shadow-2xl overflow-hidden`}
                   >
+                    {/* Contenido de la tarjeta (Tus mismos estilos) */}
                     <div className="w-full h-64 bg-black/10 rounded-[30px] overflow-hidden mb-8 border border-black/5">
                       <img 
                         src={project.image} 
@@ -214,21 +217,18 @@ export default function Projects() {
           ))}
         </Swiper>
 
-        {/* Paginación Personalizada (AHORA FUNCIONAL) */}
-        <div className="flex items-center gap-3 mt-12 z-10 relative">
+        {/* Paginación Personalizada (Sincronizada con Swiper) */}
+        <div className="flex items-center gap-3 mt-12">
           {projects.map((_, i) => (
             <motion.div
               key={i}
-              onClick={() => {
-                if (swiperInstance) {
-                  swiperInstance.slideToLoop(i); // NAVEGACIÓN AGREGADA
-                }
-              }}
               animate={{
                 width: i === activeIndex ? 40 : 10,
                 backgroundColor: i === activeIndex ? "#8b5cf6" : "#333",
               }}
-              className="h-[10px] rounded-full cursor-pointer transition-colors duration-300 hover:bg-gray-500"
+              className="h-[10px] rounded-full cursor-pointer"
+              // Nota: Para que estos puntos también controlen el Swiper, 
+              // necesitarías usar el hook useSwiper() en un componente hijo.
             />
           ))}
         </div>
