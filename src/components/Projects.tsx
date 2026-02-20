@@ -15,8 +15,8 @@ const projects = [
     type: "Visión por computadora",
     period: "2024", color: "bg-[#4ade80]",
     text: "text-black",
-    desc: "Clasificación de residuos en tiempo real.",
-    tech: ["Python", "Ultralytics", "OpenCV", "Flask"],
+    desc: "Clasificación inteligente de residuos con procesamiento de imágenes en tiempo real.",
+    tech: ["YOLOv11", "OpenCV", "Python"],
     demoUrl: "/creaciones/ecobin",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -27,8 +27,8 @@ const projects = [
     period: "2023",
     color: "bg-[#00d4ff]",
     text: "text-black",
-    desc: "Sensores IoT para monitoreo y predicción.",
-    tech: ["ESP32", "MQTT", "NestJS", "Python"],
+    desc: "Sensores IoT para predicción de biomasa y control de calidad de agua.",
+    tech: ["MQTT", "Microservicios", "NestJS"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -39,8 +39,8 @@ const projects = [
     period: "2024",
     color: "bg-[#f87171]",
     text: "text-white",
-    desc: "Detección médica asistido por IA.",
-    tech: ["Python", "TensorFlow", "FastAPI"],
+    desc: "Software de asistencia al diagnóstico médico basado en redes neuronales para análisis de patologías.",
+    tech: ["TensorFlow", "FastAPI", "Healthcare AI"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -51,8 +51,8 @@ const projects = [
     period: "2023",
     color: "bg-[#fbbf24]",
     text: "text-black",
-    desc: "App de delivery con gestión en tiempo real.",
-    tech: ["Flutter", "NestJS", "Firebase"],
+    desc: "App de delivery + App Motorizado + App Administración.",
+    tech: ["Flutter", "Firebase","Real-time DB"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -64,7 +64,7 @@ const projects = [
     color: "bg-[#8b5cf6]",
     text: "text-white",
     desc: "App de movilidad con geolocalización.",
-    tech: ["Flutter", "Node.js", "Socket.io", "PostgreSQL"],
+    tech: ["Socket.io", "PostgreSQL", "Flutter", "Node.js"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -76,7 +76,7 @@ const projects = [
     color: "bg-[#ec4899]",
     text: "text-white",
     desc: "App para compra de boletos de bus.",
-    tech: ["Flutter", "NestJS", "PostgreSQL", "Socket.io"],
+    tech: ["Cloud Architecture", "NestJS", "Flutter", "API Gateway"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -88,7 +88,7 @@ const projects = [
     color: "bg-[#2dd4bf]",
     text: "text-black",
     desc: "Predicción de mercados financieros.",
-    tech: ["Python", "TensorFlow", "Pandas", "FastAPI"],
+    tech: ["Predictive Models", "Pandas", "FastAPI", "Data Pipeline"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -99,8 +99,8 @@ const projects = [
     period: "2024",
     color: "bg-[#ffffff]",
     text: "text-black",
-    desc: "Sistema autónomo de monitoreo inteligente.",
-    tech: ["ESP32", "MQTT", "Node.js", "Redis"],
+    desc: "Seguridad autónoma y monitoreo inteligente de espacios.",
+    tech: ["Redis", "MQTT", "Node.js", "ESP32"],
     demoUrl: "#",
     brochureUrl: "#",
     image: "/retrato1color.jpeg"
@@ -143,7 +143,8 @@ export default function Projects() {
                   }}
                   transition={{ type: "spring", stiffness: 200, damping: 25 }}
                   // CAMBIO CLAVE: Quitamos h-[600px] y usamos h-auto para que sea armónico
-                  className={`w-[85vw] md:w-[480px] h-auto ${project.color} rounded-[40px] p-7 md:p-9 flex flex-col shadow-2xl relative`}
+                  //className={`w-[85vw] md:w-[480px] h-auto ${project.color} rounded-[40px] p-7 md:p-9 flex flex-col shadow-2xl relative`}
+                  className={`w-[80vw] max-w-[340px] md:max-w-none md:w-[420px] h-auto ${project.color} rounded-[40px] p-6 md:p-9 flex flex-col shadow-2xl relative`}
                 >
                   {/* Imagen con altura controlada para evitar que empuje */}
                   <div className="w-full h-48 md:h-64 bg-black/10 rounded-[30px] overflow-hidden mb-6 md:mb-8 border border-black/5 shrink-0">
@@ -192,7 +193,7 @@ export default function Projects() {
                         href={project.brochureUrl}
                         className={`flex-1 md:flex-none text-center px-5 py-3 rounded-xl text-xs md:text-sm font-bold border ${project.text} border-current hover:bg-black/5 transition-all`}
                       >
-                        Ficha técnica
+                        Brochure
                       </a>
                     </div>
                   </div>
